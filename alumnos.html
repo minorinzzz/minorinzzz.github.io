@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Miniproyecto2</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/registro.css">
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+    <script src="js/servidor.js" type="text/javascript" language="javascript"></script>
+
+    <aside class="bg-dark p-4">
+        <h3 class="text-light text-center">Navegación</h3>
+        <ul class="nav flex-column mt-5">
+            <li class="nav-item">
+                <a onclick="alumnosLista(2);" class="nav-link text-light d-flex aling-items-center">
+                    <i class="material-icons mr-2">account_box</i> Alumnos
+                </a>
+            </li>
+            <li class="nav-item">
+                <a onclick="materiasLista()" class="nav-link text-light d-flex aling-items-center">
+                    <i class="material-icons mr-2">library_books</i> Materia
+                </a>
+            </li>
+            <li class="nav-item">
+                <a onclick="docentesLista()" class="nav-link text-light d-flex aling-items-center">
+                    <i class="material-icons mr-2">school</i> Docente
+                </a>
+            </li>
+        </ul>
+
+    </aside>
+
+    <main class="p-4">
+        <div class="container">
+            <h2 class="text-center mb-4">Administracion de
+                <div id="nombre">
+                    Alumnos
+                </div>
+            </h2>
+            <div class="d-flex justify-content-start">
+                <div class="p-2 bd-highlight">
+                    <form class="my-2 my-lg-0 " name="formu2">
+                        <input class="form-control " name="st" type="search" placeholder="Buscar...">
+                    </form>
+                </div>
+                <div class="p-2 bd-highlight" id="paraBuscar">
+                    <button class="btn btn-success my-2 my-sm-0 px-5 text-light">Buscar</button>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end">
+                <div class="p-2 bd-highlight" id="botonAgrega">
+                    <button class="btn btn-success my-2 my-sm-0 px-5 text-light">Registrar Nuevo</button>
+                </div>
+            </div>
+            <br>
+            <div class="container" style="text-align:center;" id="algo">
+                <button onclick="alumnosLista(0);" style="margin:0px auto;">Actualizar</button>
+            </div>
+        </div>
+
+        <form action="" class="formulario" id="formulario" style="opacity: 0;">
+            <!-- Grupo: Docente -->
+            <div class="formulario__grupo" id="grupo__apellidoPaterno">
+                <label for="apellidoPaterno" class="formulario__label">Docente</label>
+                <div class="formulario__grupo-input">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                          <option selected>Docente...</option>
+                          <option value="1">Alexander Silva</option>
+                          <option value="2">Ramiro Gallardo</option>
+                          <option value="3">Roberto Vargas</option>
+                        </select>
+                    </div>
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 letras y solo puede contener constantes y vocales.</p>
+            </div>
+            <!-- Grupo: Materia -->
+
+            <div class="formulario__grupo" id="grupo__apellidoPaterno">
+                <label for="apellidoPaterno" class="formulario__label">Materia</label>
+                <div class="formulario__grupo-input">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect02">Options</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect02">
+                          <option selected>Materia...</option>
+                          <option value="1">MAT-115 CALCULO 1</option>
+                          <option value="2">LAB-273 LABORATORIO DE TELEMATICA</option>
+                          <option value="3">INF-273 TELEMATICA</option>
+                        </select>
+                    </div>
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 letras y solo puede contener constantes y vocales.</p>
+            </div>
+
+            <div class="formulario__grupo formulario__grupo-btn-enviar">
+                <div id="botonEnviar">
+                    <button type="submit" class="formulario__btn" onclick="enviarMateria();">Enviar</button>
+                </div>
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+            </div>
+        </form>
+    </main>
+    <script src="js/formulario.js"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
